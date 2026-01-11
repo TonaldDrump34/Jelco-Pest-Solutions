@@ -33,6 +33,11 @@ img {
     width: 100%;
 }
 
+#landing {
+    background-color: #f5f5f5;
+    height: 180px;
+}
+
 nav {
     display: flex;
     margin-top: 20px;
@@ -80,9 +85,19 @@ nav {
     font-size: 17px;
 }
 
+.schedule {
+    border: 2px solid darkred;
+    padding: 8px 14px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: darkred;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 .header__img {
     width: 100%;
-    height: 600px;
+    height: 700px;
     z-index: 1;
     position: relative;
 }
@@ -116,6 +131,11 @@ header {
 }
 
 /* DEEP DIVE */
+
+#deep__dive {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+}
 
 .deep__dive--heading-wrapper {
     text-align: center;
@@ -232,3 +252,48 @@ header {
     hyphens: auto;
     line-height: 1.4;
 }
+
+/* SCHEDULE */
+
+#other-location-wrapper {
+    display: none;
+    margin-top: 1rem;
+}
+
+.schedule__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule__input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#location {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#preferred-contact {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+

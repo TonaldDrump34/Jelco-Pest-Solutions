@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="motion.js"></script>
     <title>Jelco Pest Solutions LLC</title>
 </head>
 <body>
@@ -19,20 +20,21 @@
                 <a href="#" class="nav__links">Deep Dive</a>
                 <a href="#" class="nav__links">About Us</a>
                 <a href="#" class="nav__links">Contact Us</a>
+                <a href="#" class="nav__links schedule">Schedule a Free Inspection</a>
             </div>
         </nav>
         </div>
+    </section>
     <header>
         <div class="container">
             <div class="row">
                 <div class="header__img--wrapper">
-                    <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/489702469_1204383988359639_5127276597779842544_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=8-RfU4co2T8Q7kNvwF5BFNS&_nc_oc=Adl97Dbrj0xW0oRGAhOVc8UGFhAPQj3B6UpaNAa0ejl601xhbRUoGnp9Ia4TAzZZGFU&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=rFKf9MTyzUHgIFUgNQi-OQ&oh=00_AfkAJYmbWhGi5EZI3z3iy7HpfUTvNXP5I5m9diI8S4TTlg&oe=693D4E91" alt="Pest Control Service" class="header__img">
+                    <img src="https://img1.wsimg.com/isteam/ip/328ae78c-a255-46bd-a18a-0bd08dfdd256/truck%20logo.jpg/:/rs=w:1280,h:960" alt="Pest Control Service" class="header__img">
                     <div class="header__img--text">Jeclo Pest Solutions</div>
                 </div>
             </div>
         </div>
     </header>
-    </section>
         <div class="divider"></div>
     <main>
         <section id="deep__dive">
@@ -110,6 +112,74 @@
                 <div class="row">
                     <div class="schedule__text--wrapper">
                         <h2 class="schedule__heading">Schedule a Free Inspection Today!</h2> 
+                        <p class="schedule__text">Our hours are 9-5 Mon-Fri. We will get back to you as soon as possible!</p>
+                    </div>
+                    <div class="schedule__form">
+                    <input type="text" class="schedule__input full-name" placeholder="Full Name" required>
+                    <input type="email" class="schedule__input email-address" placeholder="Email Address" required>
+                    <input type="tel" class="schedule__input phone-number" placeholder="Phone Number" required>
+                    <label for="location">Location:</label>
+                        <select name="location" id="location" required>
+                            <option value="" disabled selected>Select Your Location</option>
+                            <option value="joplin">Joplin, MO</option>
+                            <option value="webb-city">Webb City, MO</option>
+                            <option value="carthage">Carthage, MO</option>
+                            <option value="carl-junction">Carl Junction, MO</option>
+                            <option value="neosho">Neosho, MO</option>
+                            <option value="oronogo">Oronogo, MO</option>
+                            <option value="alba">Alba, MO</option>
+                            <option value="galena">Galena, KS</option>
+                            <option value="columbus">Columbus, KS</option>
+                            <option value="other">Other</option>
+                        </select>
+                    <div id="other-location-wrapper">
+                        <input type="text" id="other-location" name="other_location" class="schedule__input" placeholder="Please specify your location" disabled required>
+                    </div>
+                        <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const select = document.getElementById('location');
+                            const wrapper = document.getElementById('other-location-wrapper');
+                            const input = document.getElementById('other-location');
+                        
+                            if (!select || !wrapper || !input) {
+                                console.error("Some elements are missing");
+                                return;
+                            }
+                        
+                            select.addEventListener('change', function() {
+                                if (this.value === 'other') {
+                                    wrapper.style.display = 'block';
+                                    input.disabled = false;
+                                    input.required = true;
+                                    // Optional: auto-focus for better UX
+                                    // input.focus();
+                                } else {
+                                    wrapper.style.display = 'none';
+                                    input.disabled = true;
+                                    input.required = false;
+                                    // Optional: clear when hidden
+                                    // input.value = '';
+                                }
+                            });
+                        
+                            // Optional: trigger once on page load in case of browser back/forward
+                            // (helps when user returns to form with "Other" already selected)
+                            if (select.value === 'other') {
+                                wrapper.style.display = 'block';
+                                input.disabled = false;
+                                input.required = true;
+                            }
+                        });
+                        </script>
+                    <label for="preferred-contact">Preferred Contact:</label>
+                        <select name="preferred-contact" id="preferred-contact" required>
+                            <option value="" disabled selected>How would you like us to contact you?</option>
+                            <option value="email">Email</option>
+                            <option value="call">Call</option>
+                            <option value="text">Text</option>
+                        </select>
+                        <input type="text" class="schedule__input" placeholder="Message">
+                    <button class="schedule__button">Schedule Now</button>
                     </div>
                 </div>
             </div>
